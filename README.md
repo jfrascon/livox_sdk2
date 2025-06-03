@@ -1,3 +1,15 @@
+# Livox-SDK2
+
+This repository is a fork of the original [Livox-SDK/Livox-SDK2](https://github.com/Livox-SDK/Livox-SDK2) project.
+
+A minor modification was made in `sdk_core/command_handler/mid360_command_handler.cpp` to reduce console output during runtime. Specifically, two `LOG_INFO` statements were changed to `LOG_DEBUG` without success and were ultimately **commented out** to avoid excessive logging of command acknowledgments and received commands:
+
+
+```cpp
+//LOG_DEBUG("Receive Ack: Id {} Seq {}", command.packet.cmd_id, command.packet.seq_num);
+//LOG_DEBUG("Receive Command: Id {} Seq {}", command.packet.cmd_id, command.packet.seq_num);
+```
+
 # 1. Introduction
 
 Livox SDK2 is a software development kit designed for all Livox lidars such as HAP and Mid-360. It is developed based on C/C++ following Livox SDK2 Communication Protocol, and provides easy-to-use C style APIs. With the Livox SDK2, users can quickly connect to the Livox Lidars and receive point cloud data.
